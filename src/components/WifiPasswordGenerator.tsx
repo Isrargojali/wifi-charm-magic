@@ -26,8 +26,8 @@ const WifiPasswordGenerator = () => {
   const generatePassword = () => {
     if (!wifiName.trim()) {
       toast({
-        title: "Please enter a WiFi name",
-        description: "Enter a WiFi name to generate the password",
+        title: "Please enter a SCOM fiber name",
+        description: "Enter a SCOM fiber name to generate the password",
         variant: "destructive",
       });
       return;
@@ -88,42 +88,27 @@ const WifiPasswordGenerator = () => {
             </div>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
-            WiFi Password Generator
+            SCOM Wifi Password Generator
           </h1>
           <p className="text-muted-foreground text-lg max-w-md mx-auto">
-            Transform your WiFi name to generate the password
+            Transform your SCOM fiber password in one click
           </p>
         </div>
 
         {/* Main Card */}
         <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50 shadow-glow-accent">
-          {/* Character Mapping Reference */}
-          <div className="mb-8 p-6 bg-secondary/30 rounded-lg border border-border/30">
-            <h3 className="text-lg font-semibold mb-3 text-foreground">🔁 Character Mapping:</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm font-mono">
-              <div className="text-accent">a ↔ 5</div>
-              <div className="text-accent">b ↔ 4</div>
-              <div className="text-accent">c ↔ 3</div>
-              <div className="text-accent">d ↔ 2</div>
-              <div className="text-accent">e ↔ 1</div>
-              <div className="text-accent">f ↔ 0</div>
-              <div className="text-accent">6 ↔ 9</div>
-              <div className="text-accent">7 ↔ 8</div>
-            </div>
-          </div>
-
           {/* Input Section */}
           <div className="space-y-6">
             <div>
               <label htmlFor="wifi-name" className="block text-sm font-medium mb-2 text-foreground">
-                Enter WiFi Name
+                Enter SCOM Fiber Name
               </label>
               <Input
                 id="wifi-name"
                 type="text"
                 value={wifiName}
                 onChange={(e) => setWifiName(e.target.value)}
-                placeholder="Enter WiFi name"
+                placeholder="Enter SCOM fiber name"
                 className="text-lg p-4 bg-input/50 border-border/50 focus:ring-primary focus:border-primary"
                 onKeyDown={(e) => e.key === 'Enter' && generatePassword()}
               />
