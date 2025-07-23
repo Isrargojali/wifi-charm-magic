@@ -101,14 +101,14 @@ const WifiPasswordGenerator = () => {
           <div className="space-y-6">
             <div>
               <label htmlFor="wifi-name" className="block text-sm font-medium mb-2 text-foreground">
-                Enter SCOM Fiber Name
+                Enter SCOM Fiber Name (format: fh_xxxxx)
               </label>
               <Input
                 id="wifi-name"
                 type="text"
                 value={wifiName}
                 onChange={(e) => setWifiName(e.target.value)}
-                placeholder="Enter SCOM fiber name"
+                placeholder="fh_xxxxx"
                 className="text-lg p-4 bg-input/50 border-border/50 focus:ring-primary focus:border-primary"
                 onKeyDown={(e) => e.key === 'Enter' && generatePassword()}
               />
