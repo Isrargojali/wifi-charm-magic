@@ -27,7 +27,7 @@ const WifiPasswordGenerator = () => {
     if (!wifiName.trim()) {
       toast({
         title: "Please enter a WiFi name",
-        description: "Enter a WiFi name like 'fh_91cc00' to generate the password",
+        description: "Enter a WiFi name to generate the password",
         variant: "destructive",
       });
       return;
@@ -91,15 +91,15 @@ const WifiPasswordGenerator = () => {
             WiFi Password Generator
           </h1>
           <p className="text-muted-foreground text-lg max-w-md mx-auto">
-            Transform your WiFi name using our specialized formula to generate the password
+            Transform your WiFi name to generate the password
           </p>
         </div>
 
         {/* Main Card */}
         <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50 shadow-glow-accent">
-          {/* Instructions */}
+          {/* Character Mapping Reference */}
           <div className="mb-8 p-6 bg-secondary/30 rounded-lg border border-border/30">
-            <h3 className="text-lg font-semibold mb-3 text-foreground">🔁 Character Matching Formula:</h3>
+            <h3 className="text-lg font-semibold mb-3 text-foreground">🔁 Character Mapping:</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm font-mono">
               <div className="text-accent">a ↔ 5</div>
               <div className="text-accent">b ↔ 4</div>
@@ -116,14 +116,14 @@ const WifiPasswordGenerator = () => {
           <div className="space-y-6">
             <div>
               <label htmlFor="wifi-name" className="block text-sm font-medium mb-2 text-foreground">
-                Enter WiFi Name (e.g., fh_91cc00)
+                Enter WiFi Name
               </label>
               <Input
                 id="wifi-name"
                 type="text"
                 value={wifiName}
                 onChange={(e) => setWifiName(e.target.value)}
-                placeholder="fh_91cc00"
+                placeholder="Enter WiFi name"
                 className="text-lg p-4 bg-input/50 border-border/50 focus:ring-primary focus:border-primary"
                 onKeyDown={(e) => e.key === 'Enter' && generatePassword()}
               />
@@ -169,24 +169,6 @@ const WifiPasswordGenerator = () => {
             )}
           </div>
 
-          {/* Example */}
-          <div className="mt-8 p-6 bg-muted/30 rounded-lg border border-border/30">
-            <h4 className="font-semibold mb-3 text-foreground">📌 Example:</h4>
-            <div className="space-y-2 text-sm">
-              <div className="text-muted-foreground">
-                <strong>WiFi name:</strong> fh_91cc00
-              </div>
-              <div className="text-muted-foreground">
-                <strong>Remove fh_:</strong> 91cc00
-              </div>
-              <div className="text-muted-foreground">
-                <strong>Transform:</strong> 9→6, 1→e, c→3, c→3, 0→f, 0→f
-              </div>
-              <div className="text-primary font-semibold">
-                <strong>Final:</strong> wlan6e33ff
-              </div>
-            </div>
-          </div>
         </Card>
       </div>
     </div>
